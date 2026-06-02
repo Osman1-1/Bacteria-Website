@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>References</title>
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .button-link {
+            margin-bottom: 12px;
+            padding: 6px 12px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>References</h1>
+
+    <ul>
+        <li>
+            Britannica (2024) Bacteria. Available at:
+            <a href="https://www.britannica.com/science/bacteria" target="_blank">
+                https://www.britannica.com/science/bacteria
+            </a>
+        </li>
+        <li>
+            NHS (2023) Antibiotics. Available at:
+            <a href="https://www.nhs.uk/conditions/antibiotics/" target="_blank">
+                https://www.nhs.uk/conditions/antibiotics/
+            </a>
+        </li>
+        <li>
+            Centers for Disease Control and Prevention (CDC) (2024) About Bacteria. Available at:
+            <a href="https://www.cdc.gov/" target="_blank">
+                https://www.cdc.gov/
+            </a>
+        </li>
+        <li>
+            World Health Organization (WHO) (2024) Bacterial infections. Available at:
+            <a href="https://www.who.int/" target="_blank">
+                https://www.who.int/
+            </a>
+        </li>
+        <li>
+            BBC Bitesize (2024) Microorganisms. Available at:
+            <a href="https://www.bbc.co.uk/bitesize" target="_blank">
+                https://www.bbc.co.uk/bitesize
+            </a>
+        </li>
+    </ul>
+
+    <h1>Helpful Links</h1>
+    <button class="button-link" onclick="toggleHelpfulLinks()" id="helpfulButton">Hide helpful links</button>
+
+    <div id="helpfulLinks">
+        <ul>
+            <li>
+                <a href="https://www.bbc.co.uk/bitesize/topics/z2f3cdm" target="_blank">
+                    BBC Bitesize – Bacteria and Microorganisms
+                </a>
+            </li>
+            <li>
+                <a href="https://www.nhs.uk/conditions/antibiotics/" target="_blank">
+                    NHS – Antibiotics Information
+                </a>
+            </li>
+            <li>
+                <a href="https://www.britannica.com/science/bacteria" target="_blank">
+                    Britannica – Bacteria Overview
+                </a>
+            </li>
+            <li>
+                <a href="https://www.who.int/health-topics" target="_blank">
+                    World Health Organization – Health Topics
+                </a>
+            </li>
+            <li>
+                <a href="https://www.cdc.gov/bacteria/index.html" target="_blank">
+                    CDC – Bacteria Information
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        function toggleHelpfulLinks() {
+            const links = document.getElementById('helpfulLinks');
+            const button = document.getElementById('helpfulButton');
+            if (links.style.display === 'none') {
+                links.style.display = 'block';
+                button.textContent = 'Hide helpful links';
+            } else {
+                links.style.display = 'none';
+                button.textContent = 'Show helpful links';
+            }
+        }
+    </script>
+</body>
+</html>

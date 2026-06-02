@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Structure of Bacteria</title>
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: black;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        #toggleButton {
+            margin: 10px 0 20px 0;
+            padding: 8px 14px;
+            font-size: 14px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Structure of Bacteria</h1>
+
+    <button id="toggleButton" onclick="toggleDarkMode()">Turn dark mode on</button>
+
+    <p>
+        Bacteria are single-celled microorganisms with a simple cell structure.
+        Unlike human or animal cells, bacteria do not have a nucleus or other
+        membrane-bound organelles. Instead, their genetic material floats freely
+        inside the cell. Even though bacteria are very small, they still have
+        different parts that help them survive and function.
+    </p>
+
+    <p>
+        The structure of bacteria allows them to live in many different environments.
+        Each part of the bacterial cell has a specific role, such as protecting the
+        cell, storing genetic information, or helping the bacteria move.
+    </p>
+
+    <h2>Main Parts of a Bacterial Cell</h2>
+
+    <ul>
+        <li><b>Cell Wall</b> – The cell wall protects the bacteria and gives it shape.</li>
+        <li><b>Cell Membrane</b> – Controls what enters and leaves the cell.</li>
+        <li><b>Cytoplasm</b> – A jelly-like substance where chemical reactions occur.</li>
+        <li><b>DNA</b> – Contains the genetic information needed for growth and reproduction.</li>
+        <li><b>Flagella</b> – Tail-like structures that help some bacteria move.</li>
+    </ul>
+
+    <h2>How Structure Helps Bacteria Survive</h2>
+
+    <p>
+        The simple structure of bacteria allows them to reproduce quickly and adapt
+        to different environments. Their protective cell wall and flexible internal
+        structure help them survive in places where many other organisms cannot live.
+    </p>
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfRmSGkKA8FDZT6VHiswmagngHNpAGGYXwFA&s" alt="Bacteria structure">
+
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            const button = document.getElementById('toggleButton');
+            if (body.style.backgroundColor === 'black') {
+                body.style.backgroundColor = 'lightblue';
+                body.style.color = 'black';
+                button.textContent = 'Turn dark mode on';
+            } else {
+                body.style.backgroundColor = 'black';
+                body.style.color = 'white';
+                button.textContent = 'Turn dark mode off';
+            }
+        }
+    </script>
+</body>
+</html>

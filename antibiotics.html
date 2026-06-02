@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Antibiotics and Resistance</title>
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: #000;
+        }
+        .info-button {
+            margin: 12px 0;
+            padding: 8px 14px;
+            font-size: 14px;
+        }
+        #tipText {
+            display: none;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Antibiotics and Resistance</h1>
+
+    <p>
+        Antibiotics are medicines that are used to treat bacterial infections.
+        They work by killing bacteria or stopping them from growing and
+        reproducing. Antibiotics have been very important in modern medicine
+        because they help treat many serious infections that were once very
+        dangerous.
+    </p>
+
+    <p>
+        Doctors prescribe antibiotics to treat infections caused by bacteria,
+        such as pneumonia, strep throat, and some types of food poisoning.
+        However, antibiotics do not work against viruses like the common cold
+        or flu.
+    </p>
+
+    <h2>Antibiotic Resistance</h2>
+
+    <p>
+        Antibiotic resistance happens when bacteria change in a way that makes
+        antibiotics less effective. This means the medicine may no longer be
+        able to kill the bacteria or stop it from growing. As a result, infections
+        can become harder to treat.
+    </p>
+
+    <h2>Causes of Antibiotic Resistance</h2>
+
+    <ul>
+        <li>Overuse of antibiotics</li>
+        <li>Not finishing a full course of antibiotics</li>
+        <li>Using antibiotics when they are not needed</li>
+    </ul>
+
+    <h2>Why It Is a Problem</h2>
+
+    <p>
+        Antibiotic resistance is a growing problem around the world. If bacteria
+        continue to become resistant to antibiotics, it may become more difficult
+        to treat infections in the future. Scientists and doctors are working to
+        find new medicines and encourage people to use antibiotics responsibly.
+    </p>
+
+    <button class="info-button" onclick="showTip()">Show antibiotic tip</button>
+    <p id="tipText">Always finish the full course of antibiotics unless your doctor tells you to stop.</p>
+
+    <img src="https://domf5oio6qrcr.cloudfront.net/medialibrary/8924/conversions/antibiotic-resistance-thumb.jpg" width="300" alt="Antibiotic resistance image">
+
+    <script>
+        function showTip() {
+            const tip = document.getElementById('tipText');
+            if (tip.style.display === 'none' || tip.style.display === '') {
+                tip.style.display = 'block';
+            } else {
+                tip.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

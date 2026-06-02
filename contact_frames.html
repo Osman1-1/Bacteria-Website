@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contact form</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+<style>
+html, body {
+min-height: 100%;
+padding: 0;
+margin: 0;
+font-family: Roboto, Arial, sans-serif;
+font-size: 14px;
+color: #666;
+}
+h1 {
+margin: 0 0 20px;
+font-weight: 400;
+color: #1c87c9;
+}
+p {
+margin: 0 0 5px;
+}
+.main-block {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+background: #1c87c9;
+}
+form {
+padding: 25px;
+margin: 25px;
+box-shadow: 0 2px 5px #f5f5f5; 
+background: #f5f5f5; 
+}
+.fas {
+margin: 25px 10px 0;
+font-size: 72px;
+color: #fff;
+}
+.fa-envelope {
+transform: rotate(-20deg);
+}
+.fa-at , .fa-mail-bulk{
+transform: rotate(10deg);
+}
+input, textarea {
+width: calc(100% - 18px);
+padding: 8px;
+margin-bottom: 20px;
+border: 1px solid #1c87c9;
+outline: none;
+}
+input::placeholder {
+color: #666;
+}
+button {
+width: 100%;
+padding: 10px;
+border: none;
+background: #1c87c9; 
+font-size: 16px;
+font-weight: 400;
+color: #fff;
+}
+button:hover {
+background: #2371a0;
+}
+.error-modal {
+display: none;
+position: fixed;
+top: 20px;
+right: 20px;
+transform: none;
+background: #fff;
+border: 1px solid #000;
+padding: 15px;
+z-index: 1000;
+width: 420px;
+font-family: Arial, sans-serif;
+box-shadow: none;
+}
+.error-modal h2 {
+margin: 0 0 10px 0;
+font-size: 16px;
+font-weight: normal;
+color: #000;
+}
+.error-modal > p {
+margin: 0 0 8px 0;
+font-size: 13px;
+color: #000;
+}
+.error-modal ul {
+margin: 0 0 12px 20px;
+padding: 0;
+list-style-type: disc;
+}
+.error-modal li {
+margin-bottom: 5px;
+color: #000;
+font-size: 13px;
+line-height: 1.4;
+}
+.error-modal button {
+background: #ddd;
+color: #000;
+padding: 8px 18px;
+font-size: 13px;
+cursor: pointer;
+border: 1px solid #000;
+display: block;
+margin: 15px 0 0 auto;
+}
+.error-modal button:hover {
+background: #ccc;
+}
+.error-overlay {
+display: none !important;
+}
+@media (min-width: 568px) {
+.main-block {
+flex-direction: row;
+}
+.left-part, form {
+width: 50%;
+}
+.fa-envelope {
+margin-top: 0;
+margin-left: 20%;
+}
+.fa-at {
+margin-top: -10%;
+margin-left: 65%;
+}
+.fa-mail-bulk {
+margin-top: 2%;
+margin-left: 28%;
+}
+}
+</style>
+</head>
+<body>
+<div class="main-block">
+<div class="left-part">
+<i class="fas fa-envelope"></i>
+<i class="fas fa-at"></i>
+<i class="fas fa-mail-bulk"></i>
+</div>
+<div class="error-overlay" id="errorOverlay"></div>
+<div class="error-modal" id="errorModal">
+  <h2>This page says</h2>
+  <p>You missed the following essential elements</p>
+  <ul id="missingList"></ul>
+  <p style="margin: 15px 0 0 0; font-size: 13px;">Please complete and resubmit</p>
+  <button onclick="closeErrorModal()">OK</button>
+</div>
+<form onsubmit="return validateForm(event)">
+<h1>Contact Me</h1>
+<div class="info">
+<div class="info">
+  <label for="fname">Full name</label>
+  <input type="text" id="fname" name="name" placeholder="Enter your full name">
+  <label for="email">Email</label>
+  <input type="text" id="email" name="email" placeholder="Enter your email">
+  <label for="phone">Phone number</label>
+  <input type="text" id="phone" name="phone" placeholder="Enter your phone number">
+  <label for="website">Website</label>
+  <input type="text" id="website" name="website" placeholder="Enter your website">
+</div>
+<p>Preferred contact method</p>
+<div class="option-group">
+  <label><input type="radio" name="contactMethod" value="email"> Email</label>
+  <label><input type="radio" name="contactMethod" value="phone"> Phone</label>
+</div>
+<p>Newsletter options</p>
+<div class="option-group">
+  <label><input type="checkbox" name="newsletter" value="weekly"> Weekly updates</label><br>
+  <label><input type="checkbox" name="newsletter" value="events"> Events & resources</label>
+</div>
+<p>Interest topics</p>
+<div>
+  <select name="interests" multiple size="4">
+    <option value="structure">Bacteria structure</option>
+    <option value="types">Types of bacteria</option>
+    <option value="prevention">Prevention tips</option>
+    <option value="research">Latest research</option>
+  </select>
+</div>
+<p>How did you hear about us?</p>
+<div>
+  <select name="source">
+    <option value="website">Website</option>
+    <option value="friend">Friend or family</option>
+    <option value="social">Social media</option>
+    <option value="school">School or class</option>
+  </select>
+</div>
+<label for="message">Message</label>
+<div>
+  <textarea id="message" rows="4" placeholder="Type your message here"></textarea>
+</div>
+</div>
+<button type="submit">Submit</button>
+<button type="reset" style="margin-top: 10px;">Reset</button>
+</form>
+</div>
+</body>
+</html>
+
+<script>
+  function validateForm(event) {
+    
+    event.preventDefault(); 
+    
+    
+    var fullName = document.getElementById("fname").value.trim();
+    var email = document.getElementById("email").value.trim();
+    var phone = document.getElementById("phone").value.trim();
+    var website = document.getElementById("website").value.trim();
+    var message = document.getElementById("message").value.trim();
+    
+    
+    var missingFields = [];
+    if (fullName === "") missingFields.push("Full name");
+    if (email === "") missingFields.push("Email");
+    if (phone === "") missingFields.push("Phone number");
+    if (website === "") missingFields.push("Website");
+    if (message === "") missingFields.push("Message");
+    
+    if (missingFields.length > 0) {
+      showErrorModal(missingFields);
+      return false;
+    }
+    
+    
+    var namePattern = /^[a-zA-Z\s]+$/;
+    if (!namePattern.test(fullName)) {
+      showErrorModal(["Full name must contain only letters and spaces"]);
+      return false;
+    }
+    
+    
+    var phonePattern = /^[0-9\-\+\s\(\)]+$/;
+    if (!phonePattern.test(phone)) {
+      showErrorModal(["Phone number must contain only numbers"]);
+      return false;
+    }
+    
+    
+    if (!email.includes("@")) {
+      showErrorModal(["Email must contain an @ symbol"]);
+      return false;
+    }
+    
+    
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      showErrorModal(["Email must be in a valid format (example@domain.com)"]);
+      return false;
+    }
+    
+    
+    alert("Thank you! Your message has been sent successfully.");
+    document.querySelector('form').reset(); 
+    return false;
+  }
+  
+  function showErrorModal(missingFields) {
+    var missingList = document.getElementById("missingList");
+    missingList.innerHTML = "";
+    
+    missingFields.forEach(function(field) {
+      var li = document.createElement("li");
+      li.textContent = field;
+      missingList.appendChild(li);
+    });
+    
+    document.getElementById("errorModal").style.display = "block";
+    document.getElementById("errorOverlay").style.display = "block";
+  }
+  
+  function closeErrorModal() {
+    document.getElementById("errorModal").style.display = "none";
+    document.getElementById("errorOverlay").style.display = "none";
+  }
+</script>

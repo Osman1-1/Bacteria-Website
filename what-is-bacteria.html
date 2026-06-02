@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>What is Bacteria</title>
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .control-button {
+            margin: 4px 6px 4px 0;
+        }
+        #moveContainer {
+            position: relative;
+            width: 320px;
+            height: 220px;
+            border: 1px solid #333;
+            background-color: white;
+            margin-bottom: 10px;
+        }
+        #bacteriaImage {
+            position: absolute;
+            left: 0;
+            top: 10px;
+            transition: left 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <h1>What is Bacteria</h1>
+
+    <script>
+        document.write("<p><strong>Welcome!</strong> This page uses JavaScript to allow you to move an image to your liking.</p>");
+    </script>
+
+    <p>Bacteria are minute organisms that are capable of only being observed under a microscope. They are unicellular microorganisms that can be found practically everywhere on Earth in soil, water, air, and the human body.</p>
+
+    <p>Millions of bacteria can live in a small area due to their size. Bacteria are some of the oldest forms of life and have existed for billions of years. Not all bacteria are harmful. Most bacteria are good and help with digestion and health.</p>
+
+    <p>Some bacteria can cause infections and diseases if they enter the body. Researchers study bacteria to understand how they work and to prevent dangerous illnesses.</p>
+
+    <h2>Key Facts</h2>
+    <ul>
+        <li>Bacteria are single-celled organisms</li>
+        <li>They can only be seen with a microscope</li>
+        <li>They exist in almost every environment</li>
+        <li>Some are helpful, while others cause disease</li>
+    </ul>
+
+    <h2>Why Bacteria Are Important</h2>
+    <p>Bacteria help break down waste, support digestion, and are used in food production and medicine.</p>
+
+    <h2>Move the image</h2>
+    <div id="moveContainer">
+        <img id="bacteriaImage" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/E._coli_Bacteria_%287316101966%29.jpg" width="200" alt="Bacteria image">
+    </div>
+    <button class="control-button" onclick="moveLeft()">Move left</button>
+    <button class="control-button" onclick="moveRight()">Move right</button>
+
+    <script>
+        function moveLeft() {
+            const image = document.getElementById('bacteriaImage');
+            const currentLeft = parseInt(image.style.left, 10) || 0;
+            image.style.left = Math.max(currentLeft - 30, 0) + 'px';
+        }
+
+        function moveRight() {
+            const image = document.getElementById('bacteriaImage');
+            const currentLeft = parseInt(image.style.left, 10) || 0;
+            image.style.left = currentLeft + 30 + 'px';
+        }
+    </script>
+</body>
+</html>

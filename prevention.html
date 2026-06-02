@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prevention</title>
+  <script>
+    function acknowledgePrevention(event) {
+      event.preventDefault();
+      var name = document.getElementById('name').value.trim();
+      if (!name) {
+        alert('Please enter your name before committing.');
+        return false;
+      }
+      document.getElementById('confirmation').textContent =
+        'Thank you, ' + name + '. You have committed to good hygiene to prevent bacteria.';
+      return false;
+    }
+  </script>
+</head>
+<body bgcolor="lightblue">
+  <h1>Prevention of Bacterial Infections</h1>
+
+  <p>
+    Preventing bacterial infections is important for protecting human health.
+    Many infections can be avoided by practicing good hygiene and following
+    basic health and safety measures. These actions help stop harmful bacteria
+    from spreading between people and environments.
+  </p>
+
+  <p>
+    Bacteria can spread through contaminated food, water, surfaces, and direct
+    contact with infected individuals. By taking simple precautions, the risk
+    of infection can be greatly reduced.
+  </p>
+
+  <h2>Ways to Prevent Bacterial Infections</h2>
+
+  <ul>
+    <li><b>Washing hands regularly</b> – Washing hands with soap and water helps remove harmful bacteria.</li>
+    <li><b>Safe food preparation</b> – Cooking food properly and storing it correctly reduces the risk of food poisoning.</li>
+    <li><b>Good personal hygiene</b> – Keeping the body and surroundings clean helps prevent bacteria from spreading.</li>
+    <li><b>Vaccination</b> – Some vaccines help protect against certain bacterial diseases.</li>
+  </ul>
+
+  <h2>Importance of Prevention</h2>
+
+  <p>
+    Preventing bacterial infections helps reduce illness and protects both
+    individuals and communities. By following good hygiene practices and
+    health guidelines, people can lower the chances of harmful bacteria
+    causing disease.
+  </p>
+
+  <h2>Commitment to Prevention</h2>
+  <p>Please enter your name and click the button to acknowledge your commitment.</p>
+
+  <form onsubmit="acknowledgePrevention(event)">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name">
+    <button type="submit">I will practice prevention</button>
+  </form>
+
+  <p id="confirmation" style="font-weight:bold; margin-top:1rem;"></p>
+</body>
+</html>
