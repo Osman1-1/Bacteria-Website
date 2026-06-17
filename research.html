@@ -37,6 +37,20 @@ bacteria affect ecosystems and how they can be used in useful technologies
 such as medicine and biotechnology.
 </p>
 
+<p>Highlight the sentence below to reveal a friendly research message:</p>
+<input type="text" id="researchSelect" value="Highlight this text to learn how bacteria research helps people." readonly onmouseup="handleSelect(event)">
+<p id="selectMessage" style="margin-top:0.5em; color:#1a5e1a; font-weight:bold;"></p>
+
+<script>
+function handleSelect(event) {
+  var input = event.target;
+  if (input.selectionStart !== input.selectionEnd) {
+    document.getElementById('selectMessage').textContent =
+      'Nice work! Bacteria research can lead to new medicines, safer foods, and healthier communities.';
+  }
+}
+</script>
+
     <img src="https://hospitaltimes.co.uk/wp-content/uploads/2023/07/shutterstock_1726134715.jpg" width="400">
 </body>
 </html> 
